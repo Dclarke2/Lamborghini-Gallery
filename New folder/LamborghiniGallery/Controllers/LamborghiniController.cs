@@ -8,7 +8,11 @@ namespace LamborghiniGallery.Controllers
 {
     public class LamborghiniController : Controller
     {
+        public string Detail()
+        {
+            return "Hello from the controller";
 
+        }
 
 
     }
