@@ -10,14 +10,7 @@ namespace LamborghiniGallery.Controllers
     {
         public ActionResult Detail()
         {
-            if (DateTime.Today.DayOfWeek == DayOfWeek.Monday)
-            {
-                return new RedirectResult("/");
-
-
-
-            }
-            return Content("Helo from the controller");
+            return View();
 
 
             
