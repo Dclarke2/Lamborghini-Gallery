@@ -1,39 +1,29 @@
 ﻿@{
-    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    ViewBag.Title = "Lamborghini Detail";
 
    
 }
 
-<!DOCTYPE html>
+<h1>@ViewBag.CarModel</h1>
+<h2>Model Year @ViewBag.YearModel</h2>
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title></title>
-</head>
-<body>
+<h5>Description: </h5>
+<div>@Html.Raw(ViewBag.Description)</div>
+
+@if (ViewBag.Variants.Length > 0)
+{
+    <h5>Lamborghini Huracan Variants: </h5>
     <div>
-        <h1>@ViewBag.CarModel</h1>
-        <h2>Model Year @ViewBag.YearModel</h2>
+        <ul>
+            @foreach (var variant in ViewBag.Variants)
+            {
 
-        <h5>Description: </h5>
-        <div>@Html.Raw(ViewBag.Description)</div>
+                <li>@variant</li>
 
-        @if (ViewBag.Variants.Length > 0)
-        {
-            <h5>Lamborghini Huracan Variants: </h5>
-            <div>
-                <ul>
-                    @foreach (var variant in ViewBag.Variants)
-                    {
-
-                        <li>@variant</li>
-
-                    }
-                </ul>
-            </div>
-        }
-
+            }
+        </ul>
     </div>
-</body>
-</html>
+}
+
+   
