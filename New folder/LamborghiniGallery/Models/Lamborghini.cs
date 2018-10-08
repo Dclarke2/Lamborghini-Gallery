@@ -13,5 +13,21 @@ namespace LamborghiniGallery.Models
         public string DescriptionHtml { get; set; }
         public Variant[] Variants { get; set; }
         public bool Favorite { get; set; }
+
+        public string DisplayText
+        {
+            get
+            {
+                return CarModel + " (" + YearModel + ")";
+            }
+        }
+
+        public string CoverImageFileName
+        {
+            get
+            {
+                return CarModel.Replace(" ", "-").ToLower() + "-" + YearModel + ".jpg";
+            }
+        }
     }
 }
