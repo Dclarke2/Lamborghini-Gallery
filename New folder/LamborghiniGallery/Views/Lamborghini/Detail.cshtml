@@ -1,25 +1,26 @@
-﻿@{
+﻿@model LamborghiniGallery.Models.Lamborghini
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
-    ViewBag.Title = "Lamborghini Detail";
+    ViewBag.Title = Model.DisplayText;
 
    
 }
 
-<h1>@ViewBag.CarModel</h1>
-<h2>Model Year @ViewBag.YearModel</h2>
+<h1>@Model.CarModel</h1>
+<h2>Model Year @Model.YearModel</h2>
 
 <h5>Description: </h5>
-<div>@Html.Raw(ViewBag.Description)</div>
+<div>@Html.Raw(Model.DescriptionHtml)</div>
 
-@if (ViewBag.Variants.Length > 0)
+@if (Model.Variants.Length > 0)
 {
     <h5>Lamborghini Huracan Variants: </h5>
     <div>
         <ul>
-            @foreach (var variant in ViewBag.Variants)
+            @foreach (var variant in Model.Variants)
             {
 
-                <li>@variant</li>
+                <li>@variant.ModelName: @variant.ModelYearRelease</li>
 
             }
         </ul>

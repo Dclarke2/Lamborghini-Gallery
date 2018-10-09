@@ -8,7 +8,7 @@ namespace LamborghiniGallery.Models
     public class Variant
     {
         public string ModelName { get; set; }
-        public int ModelYearRelease { get; set; }
+        public string ModelYearRelease { get; set; }
 
 
     }
