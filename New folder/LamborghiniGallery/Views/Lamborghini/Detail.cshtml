@@ -3,28 +3,47 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
     ViewBag.Title = Model.DisplayText;
 
-   
+
 }
 
-<h1>@Model.CarModel</h1>
-<h2>Model Year @Model.YearModel</h2>
+<h2>@Model.DisplayText</h2>
 
-<h5>Description: </h5>
-<div>@Html.Raw(Model.DescriptionHtml)</div>
-
-@if (Model.Variants.Length > 0)
-{
-    <h5>Lamborghini Huracan Variants: </h5>
-    <div>
-        <ul>
-            @foreach (var variant in Model.Variants)
+<div class="row">
+    <div class="col-md-6">
+        <div class="well">
+            <h5><label>Lamborghini Model:</label> @Model.CarModel</h5>
+            <h5><label>Car Year:</label> @Model.YearModel</h5>
+            <h5><label>Favorite:</label> @(Model.Favorite ? "Yes" : "No")</h5>
+            @if (Model.Variants.Length > 0)
             {
+                <h5>Lamborghini Huracan Variants: </h5>
+                <div>
+                    <ul>
+                        @foreach (var variant in Model.Variants)
+                        {
 
-                <li>@variant.ModelName: @variant.ModelYearRelease</li>
+                            <li>@variant.ModelName: @variant.ModelYearRelease</li>
 
+                        }
+                    </ul>
+                </div>
             }
-        </ul>
+        </div>
+        <h5>Description: </h5>
+        <div>@Html.Raw(Model.DescriptionHtml)</div>
     </div>
-}
+    <div class="col-md-6">
+        <img src="/Images/@Model.CoverImageFileName"
+             alt="@Model.DisplayText" class="img-responsive" />
+    </div>
+</div>
 
-   
+
+
+
+
+
+
+
+
+
