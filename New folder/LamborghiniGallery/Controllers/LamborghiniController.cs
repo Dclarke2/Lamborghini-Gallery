@@ -15,6 +15,13 @@ namespace LamborghiniGallery.Controllers
         {
             _lamborghiniRepository = new LamborghiniRepository();  //Instantiating the _lamborghinirepository   
         }
+        public ActionResult Index()
+        {
+
+            var lamborghini = _lamborghiniRepository.GetLamborghinis();
+            return View(lamborghini);
+
+        }
         public ActionResult Detail(int? id) //<-- '?' id only accepts an integer atm which isn't 'nullable'. the '?' allows us to pass a nullable type if an int isn't provided. 
         {                               //id passed into browser 
             if (id == null)

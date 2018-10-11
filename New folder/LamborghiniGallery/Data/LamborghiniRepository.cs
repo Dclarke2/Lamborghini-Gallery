@@ -85,7 +85,14 @@ namespace LamborghiniGallery.Data
 
 
 
+  
     };
+        public Lamborghini[] GetLamborghinis()
+        {
+
+            return _lamborghini;
+
+        }
         public Lamborghini GetLamborghini(int id) //id will allow caller of method to pick out a different type of Lambo.
         {
             Lamborghini lamborghiniToReturn = null;
