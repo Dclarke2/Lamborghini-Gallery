@@ -19,7 +19,7 @@ namespace LamborghiniGallery.Controllers
         {
 
             var lamborghini = _lamborghiniRepository.GetLamborghinis();
-            return View(lamborghini);
+            return View(lamborghini); //Prints out all the data from repository, to view.
 
         }
         public ActionResult Detail(int? id) //<-- '?' id only accepts an integer atm which isn't 'nullable'. the '?' allows us to pass a nullable type if an int isn't provided. 
@@ -29,7 +29,7 @@ namespace LamborghiniGallery.Controllers
                 return HttpNotFound();
             }
             var lamborghini = _lamborghiniRepository.GetLamborghini((int)id);//cast (int) allows passage of underlying value from nullable type. So what is should actually be such as int type.  
-            return View(lamborghini);
+            return View(lamborghini); //Returns data from repository to the view...
             
             
         }
