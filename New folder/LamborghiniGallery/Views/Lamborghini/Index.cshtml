@@ -9,10 +9,12 @@
     @foreach (var lamborghini in Model)
     {
         <div class="col-md-3">
-            <h4>@lamborghini.DisplayText</h4>
-            <img src="~/Images/@lamborghini.CoverImageFileName"
-                 alt="@lamborghini.DisplayText"
-                 class="img-responsive" />
+            <h4>@Html.ActionLink(lamborghini.DisplayText, "Detail", new { id = lamborghini.Id})</h4>
+            <a href="@Url.Action("Detail", new { id = lamborghini.Id})">
+                <img src="~/Images/@lamborghini.CoverImageFileName"
+                     alt="@lamborghini.DisplayText"
+                     class="img-responsive" />
+            </a>
         </div>
     }
 
